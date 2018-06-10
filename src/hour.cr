@@ -110,6 +110,7 @@ class Hour
   end
 
   def to_s(format : String?) : String
+    # TODO
     "#{@h}:#{@m}:#{@s}"
   end
 end

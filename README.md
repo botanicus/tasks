@@ -18,9 +18,14 @@ Today:
 
 2018-06-07:
 - Do something else
+
+Prague:
+- Something I have to do in Prague
 ```
 
-`now`
+- `tasks next` Print the coming task.
+- `tasks start` Start the next task.
+- `tasks done` Finish the current task.
 
 ## Development
 

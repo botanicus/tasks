@@ -1,4 +1,5 @@
 require "./tasks/*"
+require "./hour"
 
 # TODO: Write documentation for `Tasks`
 
