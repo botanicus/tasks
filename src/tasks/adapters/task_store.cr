@@ -2,9 +2,9 @@ require "yaml"
 
 module Tasks
   class TaskStore
-    def self.load(path : String) #: TaskList
-      # data = YAML.parse(File.read(path))
-      # TaskListDeserialiser.new(data).deserialise
+    def self.load(path : String) : TaskList
+      data = YAML.parse(File.read(path))
+      TaskListDeserialiser.new(data).deserialise
       # TaskListDeserialiser.from_yaml(File.read(path))
     end
 

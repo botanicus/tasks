@@ -50,6 +50,10 @@ class Hour
     end
   end
 
+  def self.now : self
+    self.new(h: Time.now.hours, m: Time.now.minutes, s: Time.now.seconds)
+  end
+
   # Hour.parse("1:00:00")
   # Hour.parse("1:00", "%h:%m?") # Will work with "1:00" or just "1".
   def self.parse(serialised_hour : String) #: self

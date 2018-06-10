@@ -1,3 +1,5 @@
+require "yaml"
+
 module Tasks
   class Task
     STATUSES = {:new, :started, :done}
@@ -53,6 +55,23 @@ module Tasks
 
       # TODO: 10/06/2018 I'm getting can only instantiate NamedTuple with named arguments.
       # NamedTuple(Symbol, Symbol | String | Set(Symbol)).from(i)
+    end
+  end
+
+  class TaskDeserialiser
+    # YAML.mapping(
+    #   title: String,
+    #   status: Symbol
+    # )
+
+    def initialize(@data : YAML::Any)
+    end
+
+    def deserialise #: Task
+      p @data
+      #p arguments = @data.as_h
+      # p arguments = NamedTuple(String, Symbol | String).from(@data.as_h)
+      Task.new("test")#(**arguments)
     end
   end
 end

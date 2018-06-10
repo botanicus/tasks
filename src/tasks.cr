@@ -1,15 +1,22 @@
+require "colorize"
 require "./tasks/*"
-require "./hour"
+require "./tasks/adapters/*"
 
-# TODO: Write documentation for `Tasks`
+case ARGV.first?
+when "next"
+  task_list_path = ENV.fetch("TASK_LIST_PATH", "tasks.yml")
 
-p ARGV
-case ARGV.first
-when "test"
-  list = Tasks::TaskList.new
+  unless File.exists?(task_list_path)
+    abort "... explain ...".colorize(:red).mode(:bold)
+  end
 
-  list << Tasks::Task.new("First task", Set{:important})
-  list << Tasks::Task.new("Second task")
+  p task_store = Tasks::TaskStore.load(task_list_path)
+  # list = Tasks::TaskList.new
 
-  p list
+  # list << Tasks::Task.new("First task", Set{:important})
+  # list << Tasks::Task.new("Second task")
+
+  # p list
+else
+  abort "Usage: #{PROGRAM_NAME} [next|start|done]"
 end
