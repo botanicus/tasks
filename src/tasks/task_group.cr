@@ -1,35 +1,35 @@
 require "yaml"
 
 module Tasks
-  class TaskList
-    getter task_list
+  class TaskGroup
+    getter task_group
 
-    def initialize(@task_list = Set(Task).new)
+    def initialize(@task_group = Set(Task).new)
     end
 
     def <<(task : Task) : self
-      @task_list << task
+      @task_group << task
       self
     end
   end
 
-  class TaskListSerialiser
-    def initialize(@task_list : TaskList)
+  class TaskGroupSerialiser
+    def initialize(@task_group : TaskGroup)
     end
 
     def data : Array
-      @task_list.task_list.map do |task|
+      @task_group.task_group.map do |task|
         TaskSerialiser.new(task).data
       end
     end
   end
 
-  class TaskListDeserialiser
+  class TaskGroupDeserialiser
     def initialize(@data : YAML::Any)
     end
 
-    def deserialise : TaskList
-      TaskList.new(
+    def deserialise : TaskGroup
+      TaskGroup.new(
         Set.new(
           @data.map do |task_data|
             TaskDeserialiser.new(task_data).deserialise
