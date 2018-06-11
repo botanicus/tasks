@@ -8,11 +8,12 @@ TODO: Write installation instructions here
 
 ## Usage
 
+### Task list `tasks.yml`
+
 ```yaml
-# tasks.yml
+# Timestamp and @current is added when tasks start runs.
 
 Today:
-# Timestamp and @current is added when tasks start runs.
 - 7:50 Eat breakfast @current
 - Write a task management system @programming @important
 
@@ -23,7 +24,9 @@ Prague:
 - Something I have to do in Prague
 ```
 
-- `tasks current` and `tasks next`: Print the current resp. coming task.
+### CLI
+
+- Print the current and coming task with `tasks current` resp. `tasks next`.
 - `tasks start` Start the next task.
 - `tasks done` Finish the current task, remove it from the task list and add it to an archive with the time stamps.
 
