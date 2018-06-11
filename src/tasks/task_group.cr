@@ -2,9 +2,9 @@ require "yaml"
 
 module Tasks
   class TaskGroup
-    getter task_group
+    getter name, task_group
 
-    def initialize(@task_group = Set(Task).new)
+    def initialize(@name : String, @task_group = Array(Task).new)
     end
 
     def <<(task : Task) : self
@@ -17,24 +17,30 @@ module Tasks
     def initialize(@task_group : TaskGroup)
     end
 
-    def data : Array
-      @task_group.task_group.map do |task|
-        TaskSerialiser.new(task).data
-      end
+    def data : Hash(String | Time, Array)
+      {
+        @task_group.name => (
+          @task_group.task_group.map do |task|
+            TaskSerialiser.new(task).data
+          end
+        )
+      }
     end
   end
 
   class TaskGroupDeserialiser
-    def initialize(@data : YAML::Any)
+    def initialize(@name : String | Time, @data : YAML::Type)
     end
 
-    def deserialise : TaskGroup
+    def deserialise #: TaskGroup
+      p [:n, @name]
+      p [:d, @data]
       TaskGroup.new(
-        Set.new(
-          @data.map do |task_data|
-            TaskDeserialiser.new(task_data).deserialise
-          end
-        )
+        @name,
+        @data.map do |task_data|
+          p ["td", task_data]
+          TaskDeserialiser.new(task_data).deserialise
+        end
       )
     end
   end

@@ -64,7 +64,7 @@ module Tasks
     #   status: Symbol
     # )
 
-    def initialize(@data : YAML::Any)
+    def initialize(@data : YAML::Type)
     end
 
     def deserialise #: Task
