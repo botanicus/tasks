@@ -23,7 +23,7 @@ Prague:
 - Something I have to do in Prague
 ```
 
-- `tasks next` Print the coming task.
+- `tasks current` and `tasks next`: Print the current resp. coming task.
 - `tasks start` Start the next task.
 - `tasks done` Finish the current task, remove it from the task list and add it to an archive with the time stamps.
 
