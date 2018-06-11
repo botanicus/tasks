@@ -1,5 +1,6 @@
 require "yaml"
 
+# TODO: 11/06/2018 Rename TaskList -> TaskGroupList
 module Tasks
   class TaskStore
     def self.load(path : String) #: TaskGroup

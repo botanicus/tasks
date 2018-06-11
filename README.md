@@ -12,8 +12,6 @@ TODO: Write installation instructions here
 # tasks.yml
 
 Today:
-- title: Already-done task
-  start_time: <timestamp>
 - Write a task management system
 
 2018-06-07:
@@ -21,6 +19,9 @@ Today:
 
 Prague:
 - Something I have to do in Prague
+
+# This is added when start is called and removed when done is called.
+_timestamp: <timestamp>
 ```
 
 - `tasks next` Print the coming task.
