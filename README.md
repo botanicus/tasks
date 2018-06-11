@@ -28,6 +28,11 @@ _timestamp: <timestamp>
 - `tasks start` Start the next task.
 - `tasks done` Finish the current task, remove it from the task list and add it to an archive with the time stamps.
 
-## Development
+# Wishlist
 
-TODO: Write development instructions here
+- Support tags.
+- Support defined commands via `commands.yml`:
+```yaml
+hs: headspace play
+lf: lifeflow play
+```
