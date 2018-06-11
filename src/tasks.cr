@@ -17,6 +17,10 @@ when "next"
   # list << Tasks::Task.new("Second task")
 
   # p list
+when "start"
+  p :start
+when "done"
+  p :done
 else
   abort "Usage: #{PROGRAM_NAME} [next|start|done]"
 end
