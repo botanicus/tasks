@@ -49,3 +49,4 @@ Prague:
 
 - BitBar integration.
 - (Neo)Vim plugin.
+- Consideration: schedules (static, allowing cron-like date matching + last Sunday etc.). _Dynamic is impossible, since there's no `eval` anyhow._
