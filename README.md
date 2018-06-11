@@ -21,6 +21,21 @@ archive_path: ~/archive/task-archive.yml
 commands:
   hs: headspace play
   lf: lifeflow play
+
+---
+Monday:
+- [19:20] Tap class.
+
+# Last Monday of the month.
+Monday(-1):
+- Pay rent.
+
+# Every 1st.
+1:
+
+# OR ...
+Pay rent: 1/* # cron.
+- xxx
 ```
 
 ### Task list `tasks.yml`
@@ -30,10 +45,14 @@ commands:
 
 Today:
 - 7:50 Eat breakfast @current
-- Write a task management system @programming @important
+- Write a task management system @programming @important |
+
+--- # Scheduled tasks.
 
 2018-06-07:
 - Do something else
+
+--- # Contexts.
 
 Prague:
 - Something I have to do in Prague
@@ -49,4 +68,4 @@ Prague:
 
 - BitBar integration.
 - (Neo)Vim plugin.
-- Consideration: schedules (static, allowing cron-like date matching + last Sunday etc.). _Dynamic is impossible, since there's no `eval` anyhow._
+- Consideration: schedules (static, allowing cron-like date matching + last Sunday etc.). _Dynamic is impossible, since there's no `eval` anyhow._ Could be either in the config or using YAML with ERB `Today: <<*{schedule_name}` + `tasks generate holidays`. It'd expand the `<<` sectio section.
