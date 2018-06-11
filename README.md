@@ -44,3 +44,8 @@ Prague:
 - Print the current and coming task with `tasks current` resp. `tasks next`.
 - `tasks start` Start the next task.
 - `tasks done` Finish the current task, remove it from the task list and add it to an archive with the time stamps.
+
+# TODO
+
+- BitBar integration.
+- (Neo)Vim plugin.
