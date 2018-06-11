@@ -8,6 +8,21 @@ TODO: Write installation instructions here
 
 ## Usage
 
+### Configuration file `~/.config/tasks.yml`
+
+```yaml
+task_list_path: ~/Desktop/tasks.yml
+archive_path: ~/archive/task-archive.yml
+
+# If the coming task has any of the tags defined, the corresponding command
+# will execute and if it finishes successfully, task is marked as finished. 
+#
+# Syntax: tag: command.
+commands:
+  hs: headspace play
+  lf: lifeflow play
+```
+
 ### Task list `tasks.yml`
 
 ```yaml
@@ -29,10 +44,3 @@ Prague:
 - Print the current and coming task with `tasks current` resp. `tasks next`.
 - `tasks start` Start the next task.
 - `tasks done` Finish the current task, remove it from the task list and add it to an archive with the time stamps.
-
-### Defined commands `commands.yml`
-
-```yaml
-hs: headspace play
-lf: lifeflow play
-```
