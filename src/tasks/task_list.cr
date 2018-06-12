@@ -31,24 +31,24 @@ module Tasks
     def initialize(@data : YAML::Any)
     end
 
-    def deserialise #: TaskList
-      # block = -> (task_group_name : String | Time, task_group_data : Hash(YAML::Any, YAML::Any)) do
-      #   p task_group_name
-      #   p task_group_data
-      #   TaskGroupDeserialiser.new(task_group_name, task_group_data).deserialise
-      # end
+    def deserialise # : TaskList
+    # block = -> (task_group_name : String | Time, task_group_data : Hash(YAML::Any, YAML::Any)) do
+    #   p task_group_name
+    #   p task_group_data
+    #   TaskGroupDeserialiser.new(task_group_name, task_group_data).deserialise
+    # end
 
-      # TaskList.new(@data.map(&block))
-      # TaskList.new(
-      #   *Tuple.new(
-          @data.as_h.map do |task_group_name, task_group_tasks|
-            if task_group_name.is_a?(String) || task_group_name.is_a?(Time) # Why do I need this?
-              p [:tg, task_group_name, task_group_name.to_s.class]
-              p [:tg, task_group_tasks, task_group_tasks.class]
-              TaskGroupDeserialiser.new(task_group_name, task_group_tasks.dup).deserialise
-            end
-          end
-        # )
+    # TaskList.new(@data.map(&block))
+    # TaskList.new(
+    #   *Tuple.new(
+      @data.as_h.map do |task_group_name, task_group_tasks|
+        if task_group_name.is_a?(String) || task_group_name.is_a?(Time) # Why do I need this?
+          p [:tg, task_group_name, task_group_name.to_s.class]
+          p [:tg, task_group_tasks, task_group_tasks.class]
+          TaskGroupDeserialiser.new(task_group_name, task_group_tasks.dup).deserialise
+        end
+      end
+      # )
       # )
     end
   end

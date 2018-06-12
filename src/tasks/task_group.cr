@@ -23,7 +23,7 @@ module Tasks
           @task_group.task_group.map do |task|
             TaskSerialiser.new(task).data
           end
-        )
+        ),
       }
     end
   end
@@ -32,7 +32,7 @@ module Tasks
     def initialize(@name : String | Time, @data : YAML::Type)
     end
 
-    def deserialise #: TaskGroup
+    def deserialise # : TaskGroup
       p [:n, @name]
       p [:d, @data]
       TaskGroup.new(

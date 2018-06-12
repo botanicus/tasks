@@ -67,11 +67,11 @@ module Tasks
     def initialize(@data : YAML::Type)
     end
 
-    def deserialise #: Task
+    def deserialise # : Task
       p @data
-      #p arguments = @data.as_h
+      # p arguments = @data.as_h
       # p arguments = NamedTuple(String, Symbol | String).from(@data.as_h)
-      Task.new("test")#(**arguments)
+      Task.new("test") # (**arguments)
     end
   end
 end

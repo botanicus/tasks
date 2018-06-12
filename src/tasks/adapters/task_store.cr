@@ -3,7 +3,7 @@ require "yaml"
 # TODO: 11/06/2018 Rename TaskList -> TaskGroupList
 module Tasks
   class TaskStore
-    def self.load(path : String) #: TaskGroup
+    def self.load(path : String) # : TaskGroup
       data = YAML.parse(File.read(path))
       TaskListDeserialiser.new(data).deserialise
       # TaskGroupDeserialiser.from_yaml(File.read(path))
