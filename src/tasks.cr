@@ -22,7 +22,7 @@ when "done"
   unless File.exists?(TASK_ARCHIVE_PATH)
     abort "... explain ...".colorize(:red).mode(:bold)
   end
-  
+
   finished_task = task_list.shift
   task_archive = Tasks::Archive.new(TASK_ARCHIVE_PATH)
   task_archive << finished_task
