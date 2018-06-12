@@ -28,7 +28,7 @@ Monday:
 
 # Last Monday of the month.
 Monday(-1):
-- Pay rent.
+- Pay rent
 
 # Every 1st.
 1:
@@ -58,8 +58,6 @@ Prague:
 - Something I have to do in Prague
 ```
 
-Use shards build.
-
 ### CLI
 
 - Print the current and coming task with `tasks current` resp. `tasks next`.
@@ -68,6 +66,7 @@ Use shards build.
 
 # TODO
 
+- Use shards build.
 - BitBar integration.
 - (Neo)Vim plugin.
 - Consideration: schedules (static, allowing cron-like date matching + last Sunday etc.). _Dynamic is impossible, since there's no `eval` anyhow._ Could be either in the config or using YAML with ERB `Today: <<*{schedule_name}` + `tasks generate holidays`. It'd expand the `<<` sectio section.
