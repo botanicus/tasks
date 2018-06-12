@@ -58,6 +58,8 @@ Prague:
 - Something I have to do in Prague
 ```
 
+Use shards build.
+
 ### CLI
 
 - Print the current and coming task with `tasks current` resp. `tasks next`.
